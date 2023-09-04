@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import StudentForm from "./StudentForm";
 
@@ -11,6 +11,7 @@ const EditStudent = (props) => {
   });
 
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const onSubmit = (studentObject) => {
     axios
@@ -18,10 +19,10 @@ const EditStudent = (props) => {
       .then((res) => {
         if (res.status === 200) {
           alert("Student successfully updated");
-          props.history.push("/student-list");
+          navigate("/student-list");
         } else Promise.reject();
       })
-      .catch((err) => alert("Something went wrong"));
+      .catch((err) => alert("Something went wrong y'all"));
   };
 
   useEffect(() => {

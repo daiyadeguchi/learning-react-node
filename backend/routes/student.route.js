@@ -49,16 +49,16 @@ router.route("/update-student/:id")
     })
   });
 
-router.delete("/delete-student/:id", (res, req) => {
+router.delete("/delete-student/:id", (req, res) => {
   studentSchema.findByIdAndRemove(req.params.id)
     .then(function (data) {
       res.status(200).json({
         msg: data,
+      })
     })
     .catch(function (err) {
       console.log(err);
     })
-  });
 });
 
 module.exports = router;
