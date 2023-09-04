@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./App.css"
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import CreateStudent from "./Components/create-student.component";
-import EditStudent from "./Components/edit-student.component";
+import EditStudent from "./Components/update-student.component";
 import StudentList from "./Components/student-list.component";
 
 const App = () => {
@@ -44,7 +44,7 @@ const App = () => {
                 <Routes>
                   <Route exact path="/" element={<CreateStudent/>} />
                   <Route path="/create-student" element={<CreateStudent/>} />
-                  <Route path="/edit-student/:id" element={<EditStudent/>} />
+                  <Route path="/update-student/:id" element={<EditStudent/>} />
                   <Route path="/student-list" element={<StudentList/>} /> 
                 </Routes>
               </div>

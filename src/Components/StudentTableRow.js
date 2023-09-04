@@ -25,12 +25,12 @@ const StudentTableRow = (props) => {
       <td>{rollno}</td>
       <td>
         <Link className="edit-link"
-          to={"/edit-student/" + _id}>
-            Edit
-          </Link>
-          <Button onClick={deleteStudent} size="sm" variant="danger">
-            Delete
-          </Button>
+          to={"/update-student/" + _id}>
+          Edit
+        </Link>
+        <Button onClick={deleteStudent} size="sm" variant="danger">
+          Delete
+        </Button>
       </td>
     </tr>
   );

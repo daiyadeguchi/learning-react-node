@@ -3,7 +3,11 @@ import axios from "axios";
 import StudentForm from "./StudentForm";
 
 const CreateStudent = () => {
-  const [formValues, setFormValues] = useState({ name: '', email: '', rollno: "" })
+  const [formValues, setFormValues] = useState({ 
+    name: "", 
+    email: '', 
+    rollno: "" 
+  })
   const onSubmit = studentObject => {
     axios.post('http://localhost:4000/students/create-student',studentObject)
       .then(res => {
@@ -16,7 +20,8 @@ const CreateStudent = () => {
   }
 
   return(
-    <StudentForm initialValues={formValues}
+    <StudentForm 
+      initialValues={formValues}
       onSubmit={onSubmit}
       enableReinitialize>
         Create Student

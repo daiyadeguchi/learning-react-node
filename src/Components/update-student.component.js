@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import StudentForm from "./StudentForm";
 
@@ -9,9 +10,11 @@ const EditStudent = (props) => {
     rollno: "",
   });
 
+  const { id } = useParams();
+
   const onSubmit = (studentObject) => {
     axios
-      .put("http://localhost:4000/students/update-student/" + props.match.params.id, studentObject)
+      .put("http://localhost:4000/students/update-student/" + id, studentObject)
       .then((res) => {
         if (res.status === 200) {
           alert("Student successfully updated");
@@ -23,7 +26,7 @@ const EditStudent = (props) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:4000/students/update-student" + props.match.params.id)
+      .get("http://localhost:4000/students/update-student/" + id)
       .then((res) => {
         const { name, email, rollno } = res.data;
         setFormValues({ name, email, rollno });

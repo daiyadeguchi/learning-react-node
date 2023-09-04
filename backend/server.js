@@ -6,11 +6,6 @@ let dbConfig = require('./database/db');
 
 const studentRoute = require('./routes/student.route');
 
-// mongoose.set('useNewUrlParser', true);
-// mongoose.set('useFindAndModify', false);
-// mongoose.set('useCreateIndex', true);
-// mongoose.set('useUnifiedtopology', true);
-
 mongoose.Promise = global.Promise;
 mongoose.connect(dbConfig.db).then(() => {
   console.log('Database successfully connected!')

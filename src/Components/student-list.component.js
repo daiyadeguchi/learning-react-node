@@ -11,7 +11,6 @@ const StudentList = () => {
       .get("http://localhost:4000/students")
       .then(({ data }) => {
         setStudents(data);
-        console.log(students)
       })
       .catch((error) => {
         console.log(error);
